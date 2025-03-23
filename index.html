@@ -1,10 +1,209 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <script src="https://cdn.tiny.cloud/1/u2tgnhga0hlq2p1e0k1kd93qxzqikfyvgsxxwrno77ydx6y6/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>[Your Name] | IT & Language Expertise</title>
+  <style>
+    :root {
+      --primary-color: #007BFF;
+      --secondary-color: #333;
+      /* Main page background remains #c6daf7 */
+      --bg-color: #c6daf7;
+      /* Use Verdana for all text */
+      --font-family: Verdana, sans-serif;
+    }
+    
+    /* Enable smooth scrolling for internal links */
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: var(--font-family);
+      line-height: 1.6;
+      background: var(--bg-color);
+      color: var(--secondary-color);
+    }
+    
+    /* Banner container with a white background spanning full width */
+    .banner-container {
+      background: #fff;
+      width: 100%;
+    }
+    
+    /* Banner image styled to 80% width, capped at 400px, and centered */
+    .banner {
+      width: 80%;
+      max-width: 400px; /* Maximum width set to 400px */
+      display: block;
+      margin: 0 auto;
+      height: auto;
+    }
+    
+    /* Navigation container with max-width set to 700px and centered */
+    nav {
+      background: #fff;
+      padding: 1rem 2rem;
+      max-width: 700px;
+      margin: 0 auto;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;  /* Center the navigation items */
+      flex-wrap: wrap;
+    }
+    
+    nav li {
+      margin: 0 1rem;
+    }
+    
+    nav a {
+      text-decoration: none;
+      color: var(--secondary-color);
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    
+    nav a:hover {
+      color: var(--primary-color);
+    }
+    
+    .container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    
+    section {
+      background: #fff;
+      margin-bottom: 2rem;
+      padding: 2rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border-radius: 5px;
+    }
+    
+    section h2 {
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+    
+    section h2::after {
+      content: "";
+      position: absolute;
+      width: 60px;
+      height: 3px;
+      background: var(--primary-color);
+      bottom: 0;
+      left: 0;
+    }
+    
+    section ul {
+      list-style-type: disc;
+      margin-left: 2rem;
+    }
+    
+    section p,
+    section li {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    footer {
+      background: #fff;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    }
+    
+    footer a {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    
+    footer a:hover {
+      color: var(--secondary-color);
+    }
+  </style>
 </head>
 <body>
-  <p><span style="font-family: verdana, geneva, sans-serif; color: rgb(51, 102, 204);">Hello World!</span></p>
-  <p></p><img src="https://lh3.googleusercontent.com/KG301NFUBiJau6GeROxk_Su8V5Cy9WPuA-ZoTkaYlHI3pJCtpIHKTnoCHrMDI1sNQUPUEyIp1j2zdUDa64DUFzsu_F6QYQISAKFs1mJa0wzfp0mQWccRXAjuIBd84GjDew=w1280" alt="remoteyon"></p>
+  <!-- Banner container -->
+  <div class="banner-container">
+    <img class="banner" 
+         src="https://lh3.googleusercontent.com/VQH3VzukZySZ_jfNt8XTKiuLB-XFKzJWup7VGyYAjDxBMLlWOoxKo5dcTwO3gCHeXREvRr_MV1DwAMT0VC511XTYvrnke5D-semWaImiz3UeyqS1yMLgKlUyN2EGWWZYcQ=w1280" 
+         alt="Banner Image">
+  </div>
+  
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#it-skills">IT Skills</a></li>
+      <li><a href="#language-skills">Language Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  
+  <div class="container">
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        With a powerful blend of IT expertise and linguistic finesse, I deliver innovative solutions and seamless communication to drive business success at the highest level. My technical acumen couples with my language prowess to ensure that complex ideas are clear, compelling, and accessible.
+      </p>
+    </section>
+    
+    <section id="it-skills">
+      <h2>IT Skills</h2>
+      <ul>
+        <li>Software Development: HTML5, CSS3, JavaScript, Python, etc.</li>
+        <li>Web Design & Responsive Layouts</li>
+        <li>System Architecture & DevOps</li>
+        <li>Database Management</li>
+        <li>Cloud Computing & Virtualization</li>
+      </ul>
+    </section>
+    
+    <section id="language-skills">
+      <h2>Language Skills</h2>
+      <ul>
+        <li>Fluency in English and Spanish</li>
+        <li>Proficiency in French and German</li>
+        <li>Technical Writing & Translation</li>
+        <li>Content Localization for international markets</li>
+      </ul>
+    </section>
+    
+    <section id="projects">
+      <h2>Projects</h2>
+      <p>
+        My portfolio includes a range of projects that showcase my expertise in developing cutting-edge IT solutions alongside engaging, multilingual content. Whether it’s building robust web applications or crafting precise technical documentation, my work is geared towards maximizing impact and efficiency.
+      </p>
+    </section>
+    
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        Interested in leveraging top-tier IT solutions combined with nuanced language expertise? Let’s connect and create something exceptional.
+      </p>
+      <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
+    </section>
+  </div>
+  
+  <footer>
+    <p>&copy; 2023 [Your Name]. All rights reserved. | <a href="imprint.html">Imprint</a></p>
+  </footer>
 </body>
 </html>
