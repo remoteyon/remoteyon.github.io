@@ -32,10 +32,13 @@
       color: var(--secondary-color);
     }
     
-    /* Banner container with a white background spanning full width */
+    /* Banner container with a white background spanning full width,
+       and 10px padding on top and bottom */
     .banner-container {
       background: #fff;
       width: 100%;
+      padding-top: 10px;    /* 10px padding above the image */
+      padding-bottom: 10px; /* 10px padding below the image */
     }
     
     /* Banner image styled to 80% width, capped at 400px, and centered */
@@ -47,19 +50,25 @@
       height: auto;
     }
     
-    /* Navigation container with max-width set to 700px and centered */
+    /* Full-width navigation with blue background */
     nav {
-      background: #3366CC;  /* Changed background to 3366CC */
-      padding: 1rem 2rem;
+      background: #3366CC;
+      padding: 1rem 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      width: 100%;
+    }
+    
+    /* Inner container to center the nav items */
+    .nav-container {
       max-width: 700px;
       margin: 0 auto;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 0 2rem;
     }
     
     nav ul {
       list-style: none;
       display: flex;
-      justify-content: center;  /* Center the navigation items */
+      justify-content: center;
       flex-wrap: wrap;
     }
     
@@ -69,13 +78,13 @@
     
     nav a {
       text-decoration: none;
-      color: #fff; /* Font color set to white */
+      color: #fff;
       font-weight: bold;
       transition: color 0.3s ease;
     }
     
     nav a:hover {
-      color: #ebebeb; /* Lighter white on hover */
+      color: #ebebeb;
     }
     
     .container {
@@ -147,16 +156,20 @@
          alt="Banner Image">
   </div>
   
+  <!-- Full-width navigation -->
   <nav>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#it-skills">IT Skills</a></li>
-      <li><a href="#language-skills">Language Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+    <div class="nav-container">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#it-skills">IT Skills</a></li>
+        <li><a href="#language-skills">Language Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
   </nav>
   
+  <!-- Main content container -->
   <div class="container">
     <section id="about">
       <h2>About Me</h2>
