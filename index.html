@@ -1,222 +1,600 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>[Your Name] | IT & Language Expertise</title>
-  <style>
-    :root {
-      --primary-color: #007BFF;
-      --secondary-color: #333;
-      /* Main page background remains #c6daf7 */
-      --bg-color: #c6daf7;
-      /* Use Verdana for all text */
-      --font-family: Verdana, sans-serif;
-    }
-    
-    /* Enable smooth scrolling for internal links */
-    html {
-      scroll-behavior: smooth;
-    }
-    
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    body {
-      font-family: var(--font-family);
-      line-height: 1.6;
-      background: var(--bg-color);
-      color: var(--secondary-color);
-    }
-    
-    /* Banner container with a white background spanning full width,
-       and 10px padding on top and bottom */
-    .banner-container {
-      background: #fff;
-      width: 100%;
-      padding-top: 10px;    /* 10px padding above the image */
-      padding-bottom: 10px; /* 10px padding below the image */
-    }
-    
-    /* Banner image styled to 80% width, capped at 400px, and centered */
-    .banner {
-      width: 80%;
-      max-width: 400px; /* Maximum width set to 400px */
-      display: block;
-      margin: 0 auto;
-      height: auto;
-    }
-    
-    /* Full-width navigation with blue background */
-    nav {
-      background: #3366CC;
-      padding: 1rem 0;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      width: 100%;
-    }
-    
-    /* Inner container to center the nav items */
-    .nav-container {
-      max-width: 700px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-    
-    nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    
-    nav li {
-      margin: 0 1rem;
-    }
-    
-    nav a {
-      text-decoration: none;
-      color: #fff;
-      font-weight: bold;
-      transition: color 0.3s ease;
-    }
-    
-    nav a:hover {
-      color: #ebebeb;
-    }
-    
-    .container {
-      max-width: 1000px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-    
-    section {
-      background: #fff;
-      margin-bottom: 2rem;
-      padding: 2rem;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      border-radius: 5px;
-    }
-    
-    section h2 {
-      color: var(--primary-color);
-      margin-bottom: 1rem;
-      position: relative;
-      padding-bottom: 0.5rem;
-    }
-    
-    section h2::after {
-      content: "";
-      position: absolute;
-      width: 60px;
-      height: 3px;
-      background: var(--primary-color);
-      bottom: 0;
-      left: 0;
-    }
-    
-    section ul {
-      list-style-type: disc;
-      margin-left: 2rem;
-    }
-    
-    section p,
-    section li {
-      font-size: 1rem;
-      margin-bottom: 0.5rem;
-    }
-    
-    footer {
-      background: #fff;
-      padding: 1rem;
-      text-align: center;
-      box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
-    }
-    
-    footer a {
-      color: var(--primary-color);
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s ease;
-    }
-    
-    footer a:hover {
-      color: var(--secondary-color);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>remoteyon | Global IT Consulting</title>
+    <style>
+        /* Modern CSS Reset & Variable Definitions */
+        :root {
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --secondary: #2dd4bf;
+            --slate-50: #f8fafc;
+            --slate-100: #f1f5f9;
+            --slate-200: #e2e8f0;
+            --slate-400: #94a3b8;
+            --slate-500: #64748b;
+            --slate-600: #475569;
+            --slate-900: #0f172a;
+            --white: #ffffff;
+            --font-main: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--slate-50);
+            color: var(--slate-900);
+            line-height: 1.5;
+            transition: direction 0.3s ease;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .section-padding {
+            padding: 5rem 0;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 50;
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--slate-200);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 4.5rem;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+            text-transform: lowercase;
+        }
+
+        .logo span {
+            color: var(--primary);
+            text-transform: uppercase;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .nav-links {
+            display: none;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .nav-links { display: flex; }
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--slate-900);
+            font-size: 0.875rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .btn-nav {
+            background-color: var(--slate-900);
+            color: var(--white) !important;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            transition: background-color 0.2s !important;
+        }
+
+        .btn-nav:hover {
+            background-color: var(--primary) !important;
+        }
+
+        /* Language Switcher */
+        .lang-switcher {
+            position: relative;
+            display: inline-block;
+        }
+
+        .lang-btn {
+            background: var(--slate-100);
+            border: 1px solid var(--slate-200);
+            padding: 0.4rem 0.8rem;
+            border-radius: 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.2s;
+        }
+
+        .lang-btn:hover {
+            background: var(--slate-200);
+        }
+
+        .lang-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: var(--white);
+            border: 1px solid var(--slate-200);
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+            margin-top: 0.5rem;
+            display: none;
+            overflow: hidden;
+            min-width: 120px;
+        }
+
+        .lang-dropdown.show {
+            display: block;
+        }
+
+        .lang-option {
+            padding: 0.6rem 1rem;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: background 0.2s;
+            text-align: left;
+        }
+
+        .lang-option:hover {
+            background: var(--slate-50);
+            color: var(--primary);
+        }
+
+        [dir="rtl"] .lang-dropdown {
+            right: auto;
+            left: 0;
+        }
+
+        [dir="rtl"] .lang-option {
+            text-align: right;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding-top: 8rem;
+            padding-bottom: 5rem;
+            text-align: center;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.375rem 1rem;
+            background-color: #eff6ff;
+            color: var(--primary);
+            border: 1px solid #dbeafe;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        @media (min-width: 768px) {
+            .hero h1 { font-size: 4.5rem; }
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+            color: var(--slate-500);
+            max-width: 42rem;
+            margin: 0 auto 2.5rem;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border-radius: 0.75rem;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.2);
+            transition: background-color 0.2s;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+        }
+
+        /* Services & Grid */
+        .grid-3, .grid-services {
+            display: grid;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .grid-3 { grid-template-columns: repeat(3, 1fr); }
+            .grid-services { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (min-width: 1024px) {
+            .grid-services { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        .lang-card, .service-card {
+            padding: 2rem;
+            border-radius: 1rem;
+            border: 1px solid var(--slate-200);
+            background: var(--white);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+        }
+
+        .lang-card h3, .service-card h4 {
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .cta-box {
+            background-color: var(--slate-900);
+            color: var(--white);
+            border-radius: 1.5rem;
+            padding: 4rem 1.5rem;
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .cta-box { padding: 4rem; }
+        }
+
+        .cta-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        @media (min-width: 640px) {
+            .cta-buttons { flex-direction: row; }
+        }
+
+        .btn-white {
+            background: var(--white);
+            color: var(--slate-900);
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.75rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        footer {
+            padding: 2.5rem 0;
+            text-align: center;
+            color: var(--slate-400);
+        }
+
+        .footer-links {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--slate-500);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .section-title {
+            font-size: 1.875rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+        }
+    </style>
 </head>
 <body>
-  <!-- Banner container -->
-  <div class="banner-container">
-    <img class="banner" 
-         src="https://lh3.googleusercontent.com/VQH3VzukZySZ_jfNt8XTKiuLB-XFKzJWup7VGyYAjDxBMLlWOoxKo5dcTwO3gCHeXREvRr_MV1DwAMT0VC511XTYvrnke5D-semWaImiz3UeyqS1yMLgKlUyN2EGWWZYcQ=w1280" 
-         alt="Banner Image">
-  </div>
-  
-  <!-- Full-width navigation -->
-  <nav>
-    <div class="nav-container">
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#it-skills">IT Skills</a></li>
-        <li><a href="#language-skills">Language Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
-  
-  <!-- Main content container -->
-  <div class="container">
-    <section id="about">
-      <h2>About Me</h2>
-      <p>
-        With a powerful blend of IT expertise and linguistic finesse, I deliver innovative solutions and seamless communication to drive business success at the highest level. My technical acumen couples with my language prowess to ensure that complex ideas are clear, compelling, and accessible.
-      </p>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-content">
+            <div class="logo">remoteyon <span>IT CONSULTING</span></div>
+            
+            <div class="nav-right">
+                <div class="nav-links">
+                    <a href="#services" data-key="nav-services">Services</a>
+                    <a href="#languages" data-key="nav-languages">Languages</a>
+                    <a href="#contact" class="btn-nav" data-key="nav-contact">Get in Touch</a>
+                </div>
+
+                <!-- Language Switcher -->
+                <div class="lang-switcher">
+                    <button class="lang-btn" id="langBtn">
+                        <span id="currentLangLabel">English</span>
+                        <small>▼</small>
+                    </button>
+                    <div class="lang-dropdown" id="langDropdown">
+                        <div class="lang-option" onclick="setLanguage('ar')">العربية</div>
+                        <div class="lang-option" onclick="setLanguage('en')">English</div>
+                        <div class="lang-option" onclick="setLanguage('de')">Deutsch</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero container">
+        <span class="badge" data-key="hero-badge">Available for Remote Projects Worldwide</span>
+        <h1 id="hero-title">Global IT Solutions, <br><span class="gradient-text">Delivered Remotely.</span></h1>
+        <p id="hero-desc">Bridging technical gaps across borders. Specialized in IT coordination, knowledge management, technical coaching, and remote infrastructure administration.</p>
+        <div>
+            <a href="https://meetings.hubspot.com/boss6" target="_blank" class="btn-primary" data-key="hero-cta">Book a Discovery Call</a>
+        </div>
     </section>
-    
-    <section id="it-skills">
-      <h2>IT Skills</h2>
-      <ul>
-        <li>Web Design & Responsive Layouts</li>
-        <li>System Architecture & DevOps</li>
-        <li>Database Management</li>
-        <li>Cloud Computing & Virtualization</li>
-      </ul>
+
+    <!-- Languages -->
+    <section id="languages" class="section-padding">
+        <div class="container">
+            <h2 class="section-title" data-key="lang-title">Languages</h2>
+            <div class="grid-3">
+                <div class="lang-card">
+                    <h3>العربية</h3>
+                    <p data-key="lang-ar-desc">تحدث وكتابة بطلاقة، مع خبرة واسعة في الأسواق الاوروبية والحلول التقنية المحلية.</p>
+                </div>
+                <div class="lang-card">
+                    <h3>English</h3>
+                    <p data-key="lang-en-desc">Full professional proficiency for global technical documentation and stakeholder management.</p>
+                </div>
+                <div class="lang-card">
+                    <h3>Deutsch</h3>
+                    <p data-key="lang-de-desc">Verhandlungssicher in Wort und Schrift. Erfahren in der Zusammenarbeit mit DACH-Unternehmen.</p>
+                </div>
+            </div>
+        </div>
     </section>
-    
-    <section id="language-skills">
-      <h2>Language Skills</h2>
-      <ul>
-        <li>Fluency in English and German</li>
-        <li>Technical Writing & Translation</li>
-      </ul>
+
+    <!-- Services -->
+    <section id="services" class="section-padding container">
+        <h2 class="section-title" data-key="services-title">Core Expertise</h2>
+        <div class="grid-services">
+            <div class="service-card">
+                <h4 data-key="s1-title">IT Coordination</h4>
+                <p data-key="s1-desc">Seamlessly aligning remote technical teams, vendors, and stakeholders to ensure project success.</p>
+            </div>
+            <div class="service-card">
+                <h4 data-key="s2-title">Knowledge Management</h4>
+                <p data-key="s2-desc">Capturing and organizing technical expertise to empower distributed teams with reliable information.</p>
+            </div>
+            <div class="service-card">
+                <h4 data-key="s3-title">Coaching</h4>
+                <p data-key="s3-desc">Training and upskilling employees in the latest technologies to maintain a competitive technical edge.</p>
+            </div>
+            <div class="service-card">
+                <h4 data-key="s4-title">IT Advisory</h4>
+                <p data-key="s4-desc">Bridging the gap between business goals and technical execution.</p>
+            </div>
+            <div class="service-card">
+                <h4 data-key="s5-title">Windows and Office Deployment</h4>
+                <p data-key="s5-desc">Automated installations and management of Microsoft Windows environments and Office 365 suites.</p>
+            </div>
+            <div class="service-card">
+                <h4 data-key="s6-title">Remote Administration and Support</h4>
+                <p data-key="s6-desc">Efficient remote administration of IT infrastructure and high-quality tech support for global teams.</p>
+            </div>
+        </div>
     </section>
-    
-    <section id="projects">
-      <h2>Projects</h2>
-      <p>
-        My portfolio includes a range of projects that showcase my expertise in developing cutting-edge IT solutions alongside engaging, multilingual content. Whether it’s building robust web applications or crafting precise technical documentation, my work is geared towards maximizing impact and efficiency.
-      </p>
+
+    <!-- Contact -->
+    <section id="contact" class="section-padding container">
+        <div class="cta-box">
+            <h2 data-key="cta-title">Need to align your technical operations?</h2>
+            <p data-key="cta-desc">Expert coaching, deployment, and coordination for teams worldwide—let's optimize your workflow.</p>
+            <div class="cta-buttons">
+                <a href="mailto:info@remoteyon.de?Subject=Contact%20via%20website" class="btn-white" data-key="cta-email">Email Me</a>
+            </div>
+        </div>
     </section>
-    
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>
-        Interested in leveraging top-tier IT solutions combined with nuanced language expertise? Let’s connect and create something exceptional.
-      </p>
-      <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
-    </section>
-  </div>
-  
-  <footer>
-    <p>
-      &copy; 2023 [Your Name]. All rights reserved. | 
-      <a href="https://en.yahyadodin.com/Impressum">Imprint</a>
-    </p>
-  </footer>
+
+    <footer>
+        <div class="container">
+            <p data-key="footer-text">&copy; 2026 remoteyon IT Consulting. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://help.remoteyon.com" target="_blank" data-key="footer-gitbook">GitBook</a>
+                <a href="https://en.yahyadodin.com/Impressum" target="_blank" data-key="footer-imprint">Imprint</a>
+                <a href="https://en.yahyadodin.com/privacy" target="_blank" data-key="footer-privacy">Privacy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Content Translations
+        const translations = {
+            en: {
+                dir: 'ltr',
+                label: 'English',
+                'nav-services': 'Services',
+                'nav-languages': 'Languages',
+                'nav-contact': 'Get in Touch',
+                'hero-badge': 'Available for Remote Projects Worldwide',
+                'hero-cta': 'Book a Discovery Call',
+                'lang-title': 'Languages',
+                'services-title': 'Core Expertise',
+                'cta-title': 'Need to align your technical operations?',
+                'cta-desc': "Expert coaching, deployment, and coordination for teams worldwide—let's optimize your workflow.",
+                'cta-email': 'Email Me',
+                'footer-text': '© 2026 remoteyon IT Consulting. All rights reserved.',
+                'footer-gitbook': 'GitBook',
+                'footer-imprint': 'Imprint',
+                'footer-privacy': 'Privacy',
+                's1-title': 'IT Coordination',
+                's1-desc': 'Seamlessly aligning remote technical teams, vendors, and stakeholders to ensure project success.',
+                's2-title': 'Knowledge Management',
+                's2-desc': 'Capturing and organizing technical expertise to empower distributed teams with reliable information.',
+                's3-title': 'Coaching',
+                's3-desc': 'Training and upskilling employees in the latest technologies to maintain a competitive technical edge.',
+                's4-title': 'IT Advisory',
+                's4-desc': 'Bridging the gap between business goals and technical execution.',
+                's5-title': 'Windows and Office Deployment',
+                's5-desc': 'Automated installations and management of Microsoft Windows environments and Office 365 suites.',
+                's6-title': 'Remote Administration and Support',
+                's6-desc': 'Efficient remote administration of IT infrastructure and high-quality tech support for global teams.'
+            },
+            ar: {
+                dir: 'rtl',
+                label: 'العربية',
+                'nav-services': 'الخدمات',
+                'nav-languages': 'اللغات',
+                'nav-contact': 'تواصل معنا',
+                'hero-badge': 'متاح للمشاريع عن بعد في جميع أنحاء العالم',
+                'hero-cta': 'احجز مكالمة استكشافية',
+                'lang-title': 'اللغات',
+                'services-title': 'الخبرات الأساسية',
+                'cta-title': 'هل تحتاج إلى تنسيق عملياتك الفنية؟',
+                'cta-desc': 'تدريب خبير، ونشر أنظمة، وتنسيق للفرق في جميع أنحاء العالم - فلنعمل على تحسين سير عملك.',
+                'cta-email': 'أرسل بريداً إلكترونياً',
+                'footer-text': 'جميع الحقوق محفوظة © 2026 remoteyon للاستشارات التقنية.',
+                'footer-gitbook': 'GitBook',
+                'footer-imprint': 'البصمة القانونية',
+                'footer-privacy': 'الخصوصية',
+                's1-title': 'تنسيق تكنولوجيا المعلومات',
+                's1-desc': 'التنسيق السلس بين الفرق الفنية عن بُعد والموردين وأصحاب المصلحة لضمان نجاح المشروع.',
+                's2-title': 'إدارة المعرفة',
+                's2-desc': 'التقاط وتنظيم الخبرات الفنية لتمكين الفرق الموزعة من الوصول إلى معلومات موثوقة.',
+                's3-title': 'التدريب (Coaching)',
+                's3-desc': 'تدريب الموظفين ورفع مهاراتهم في أحدث التقنيات للحفاظ على ميزة تقنية تنافسية.',
+                's4-title': 'الاستشارات التقنية',
+                's4-desc': 'سد الفجوة بين أهداف العمل والتنفيذ الفني.',
+                's5-title': 'نشر ويندوز وأوفيس',
+                's5-desc': 'التثبيت التلقائي وإدارة بيئات مايكروسوفت ويندوز وحزم أوفيس 365.',
+                's6-title': 'الإدارة والدعم عن بعد',
+                's6-desc': 'إدارة فعالة عن بعد للبنية التحتية لتكنولوجيا المعلومات ودعم فني عالي الجودة للفرق العالمية.'
+            },
+            de: {
+                dir: 'ltr',
+                label: 'Deutsch',
+                'nav-services': 'Dienstleistungen',
+                'nav-languages': 'Sprachen',
+                'nav-contact': 'Kontakt aufnehmen',
+                'hero-badge': 'Verfügbar für Remote-Projekte weltweit',
+                'hero-cta': 'Beratungsgespräch buchen',
+                'lang-title': 'Sprachen',
+                'services-title': 'Kernkompetenzen',
+                'cta-title': 'Müssen Sie Ihre technischen Abläufe optimieren?',
+                'cta-desc': 'Experten-Coaching, Deployment und Koordination für Teams weltweit – lassen Sie uns Ihren Workflow verbessern.',
+                'cta-email': 'E-Mail schreiben',
+                'footer-text': '© 2026 remoteyon IT-Consulting. Alle Rechte vorbehalten.',
+                'footer-gitbook': 'GitBook',
+                'footer-imprint': 'Impressum',
+                'footer-privacy': 'Datenschutz',
+                's1-title': 'IT-Koordination',
+                's1-desc': 'Nahtlose Abstimmung von Remote-Entwicklerteams, Anbietern und Stakeholdern zur Sicherstellung des Projekterfolgs.',
+                's2-title': 'Wissensmanagement',
+                's2-desc': 'Erfassung und Organisation von technischem Fachwissen, um verteilte Teams mit verlässlichen Informationen zu unterstützen.',
+                's3-title': 'Coaching',
+                's3-desc': 'Schulung und Weiterbildung von Mitarbeitern in den neuesten Technologien zur Sicherung eines technologischen Vorsprungs.',
+                's4-title': 'IT-Beratung',
+                's4-desc': 'Überbrückung der Lücke zwischen Geschäftszielen und technischer Ausführung.',
+                's5-title': 'Windows- und Office-Deployment',
+                's5-desc': 'Automatisierte Installationen und Verwaltung von Microsoft Windows-Umgebungen und Office 365-Suiten.',
+                's6-title': 'Remote-Administration und Support',
+                's6-desc': 'Effiziente Remote-Verwaltung der IT-Infrastruktur und hochwertiger technischer Support für globale Teams.'
+            }
+        };
+
+        // UI Logic
+        const langBtn = document.getElementById('langBtn');
+        const langDropdown = document.getElementById('langDropdown');
+        const currentLangLabel = document.getElementById('currentLangLabel');
+
+        langBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            langDropdown.classList.toggle('show');
+        });
+
+        window.addEventListener('click', (e) => {
+            if (!langBtn.contains(e.target)) {
+                langDropdown.classList.remove('show');
+            }
+        });
+
+        function setLanguage(lang) {
+            const data = translations[lang];
+            
+            document.body.dir = data.dir;
+            currentLangLabel.innerText = data.label;
+            
+            document.querySelectorAll('[data-key]').forEach(el => {
+                const key = el.getAttribute('data-key');
+                if (data[key]) el.innerText = data[key];
+            });
+
+            if(lang === 'ar') {
+                document.getElementById('hero-title').innerHTML = 'حلول تقنية عالمية، <br><span class="gradient-text">تُقدم عن بعد.</span>';
+                document.getElementById('hero-desc').innerText = 'سد الفجوات التقنية عبر الحدود. متخصصون في تنسيق تكنولوجيا المعلومات، وإدارة المعرفة، والتدريب الفني، والإدارة عن بُعد للبنية التحتية.';
+            } else if (lang === 'de') {
+                document.getElementById('hero-title').innerHTML = 'Globale IT-Lösungen, <br><span class="gradient-text">Remote geliefert.</span>';
+                document.getElementById('hero-desc').innerText = 'Technologische Lücken grenzüberschreitend schließen. Spezialisiert auf IT-Koordination, Wissensmanagement, technisches Coaching und Remote-Infrastrukturverwaltung.';
+            } else {
+                document.getElementById('hero-title').innerHTML = 'Global IT Solutions, <br><span class="gradient-text">Delivered Remotely.</span>';
+                document.getElementById('hero-desc').innerText = 'Bridging technical gaps across borders. Specialized in IT coordination, knowledge management, technical coaching, and remote infrastructure administration.';
+            }
+
+            langDropdown.classList.remove('show');
+        }
+    </script>
 </body>
 </html>
