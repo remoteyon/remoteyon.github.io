@@ -24,12 +24,14 @@ Feel free to inspect the code in case you need something similar for your projec
 
 ### Tools:
 
-* Current version built with Google's Gemini AI
+* Current version built with Perplexity AI
+* Previous Version built with Google's Gemini AI
 * Previous version built with Microsoft's Copilot
 
 
 
 ### AI considerations:
 
-* Using Canvas mode allows for versioning, but it's buggy, so always copy and paste the latest working code into an editor
-* AI will make unwanted changes to other parts of the site: Check your prompt and preview the entire website to be sure
+* Unlike Gemini, Perplexity behaved badly only after many prompts. Restarting with a fresh prompt and a recent copy of the html file worked much better than in Gemini
+* Using Canvas mode in Gemini allows for versioning, but it's buggy, so always copy and paste the latest working code into an editor
+* Gemini will make unwanted changes to other parts of the site: Check your prompt and preview the entire website to be sure
