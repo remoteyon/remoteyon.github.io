@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>remoteyon - Imprint</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light dark" />
+  <style>
+    /* ====== Base reset ====== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    /* ====== Theme variables ====== */
+    :root {
+      --bg: #f5f5f7;
+      --bg-elevated: #ffffff;
+      --text-main: #111827;
+      --text-muted: #4b5563;
+      --border-subtle: rgba(0,0,0,0.06);
+      --header-bg: #111827;
+      --header-text: #f9fafb;
+      --footer-bg: #111827;
+      --footer-text: #d1d5db;
+      --footer-muted: #9ca3af;
+      --button-bg: #1f2937;
+      --button-border: #4b5563;
+      --button-bg-hover: #111827;
+      --button-border-hover: #9ca3af;
+    }
+
+    body.theme-dark {
+      --bg: #020617;
+      --bg-elevated: #020617;
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+      --border-subtle: rgba(148,163,184,0.35);
+      --header-bg: #020617;
+      --header-text: #e5e7eb;
+      --footer-bg: #020617;
+      --footer-text: #9ca3af;
+      --footer-muted: #6b7280;
+      --button-bg: #020617;
+      --button-border: #6b7280;
+      --button-bg-hover: #020617;
+      --button-border-hover: #e5e7eb;
+    }
+
+    /* ====== Layout ====== */
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      color: var(--text-main);
+      background-color: var(--bg);
+      transition: background-color 0.18s ease, color 0.18s ease;
+    }
+
+    /* ====== Header ====== */
+    header {
+      background-color: var(--header-bg);
+      color: var(--header-text);
+      padding: 1rem 1.5rem;
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      transition: background-color 0.15s ease, color 0.15s ease;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      background-color: #f9fafb;
+      color: #111827;
+    }
+
+    .header-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .lang-label {
+      font-size: 0.8rem;
+      color: var(--footer-muted);
+    }
+
+    .lang-select {
+      font-size: 0.8rem;
+      padding: 0.25rem 0.5rem;
+      border-radius: 999px;
+      border: 1px solid var(--button-border);
+      background-color: var(--button-bg);
+      color: #f9fafb;
+      cursor: pointer;
+      outline: none;
+    }
+
+    .lang-select:focus {
+      border-color: var(--button-border-hover);
+    }
+
+    .header-button {
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid var(--button-border);
+      background-color: var(--button-bg);
+      color: #f9fafb;
+      font-size: 0.8rem;
+      cursor: pointer;
+      min-width: 46px;
+      text-align: center;
+      transition: background-color 0.15s ease, border-color 0.15s ease;
+    }
+
+    .header-button:hover,
+    .header-button:focus {
+      background-color: var(--button-bg-hover);
+      border-color: var(--button-border-hover);
+      outline: none;
+    }
+
+    /* ====== Main ====== */
+    main {
+      flex: 1;
+      max-width: 1100px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 1.5rem;
+    }
+
+    .page-title {
+      font-size: 1.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .page-subtitle {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+
+    .legal-section {
+      background-color: var(--bg-elevated);
+      border-radius: 8px;
+      padding: 2rem;
+      box-shadow: 0 1px 3px var(--border-subtle);
+      margin-bottom: 2rem;
+    }
+
+    .legal-section h2 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      color: var(--text-main);
+      border-bottom: 2px solid var(--text-muted);
+      padding-bottom: 0.5rem;
+    }
+
+    .legal-section h3 {
+      font-size: 1.15rem;
+      margin: 1.5rem 0 0.75rem 0;
+      color: var(--text-main);
+    }
+
+    .legal-section p,
+    .legal-section li {
+      font-size: 0.97rem;
+      line-height: 1.7;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .legal-section ul {
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .legal-section li {
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-label {
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    /* ====== Footer ====== */
+    footer {
+      background-color: var(--footer-bg);
+      color: var(--footer-text);
+      padding: 0.85rem 1.5rem;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      font-size: 0.85rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-left {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+
+    /* ====== Responsive ====== */
+    @media (max-width: 640px) {
+      header {
+        padding: 0.75rem 1rem;
+      }
+
+      main {
+        padding: 1rem;
+      }
+
+      .header-inner {
+        align-items: flex-start;
+      }
+
+      nav ul {
+        gap: 0.5rem;
+      }
+
+      .legal-section {
+        padding: 1.5rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="logo" data-i18n="siteName">remoteyon IT consulting</div>
+
+      <nav>
+        <ul>
+          <li><a href="index.html" data-i18n="navHome">Home</a></li>
+          <li><a href="about.html" data-i18n="navAbout">About</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-controls">
+        <label
+          class="lang-label"
+          for="lang-select"
+          data-i18n="headerLanguageLabel"
+        >
+          Language:
+        </label>
+        <select
+          id="lang-select"
+          class="lang-select"
+          aria-label="Select language"
+        >
+          <option value="ar">العربية</option>
+          <option value="en" selected>English</option>
+          <option value="de">Deutsch</option>
+        </select>
+
+        <button
+          type="button"
+          class="header-button"
+          id="theme-toggle"
+          aria-label="Toggle dark mode"
+        >
+          ☾
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <h1 class="page-title" data-i18n="imprintTitle">Imprint / Legal Notice</h1>
+    <p class="page-subtitle" data-i18n="imprintSubtitle">
+      Legal information according to § 5 TMG
+    </p>
+
+    <section class="legal-section" data-i18n-section="imprintContent">
+      <!-- Content will be populated by JavaScript -->
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-left">
+        <span data-i18n="footerCopyright">
+          © 2026 remoteyon IT consulting. All rights reserved.
+        </span>
+        <div class="footer-links">
+          <a href="privacy.html" data-i18n="footerPrivacy">Privacy</a>
+          <a href="imprint.html" data-i18n="footerTerms">Imprint</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const translations = {
+      en: {
+        siteName: "remoteyon IT consulting",
+        navHome: "Home",
+        navAbout: "About",
+        imprintTitle: "Imprint / Legal Notice",
+        imprintSubtitle: "Information pursuant to § 5 TMG",
+        imprintContent: `
+          <div class="contact-item">
+            <span class="contact-label">Provider:</span>
+            <strong>Yahya Dodin IT Consulting</strong><br>
+            Yahya Dodin<br>
+            Reaumurstr. 20<br>
+            12207 Berlin<br>
+            Germany
+          </div>
+          
+          <div class="contact-item">
+            <span class="contact-label">Contact:</span>
+            Phone: +49 30 555 765 49<br>
+            Email: <a href="mailto:info@remoteyon.de?Subject=Imprint">info@remoteyon.de</a>
+          </div>
+          
+          <div class="contact-item">
+            <span class="contact-label">Mailing address:</span>
+            remoteyon / Yahya Dodin IT-Consulting<br>
+            Scanbox 16297<br>
+            Ehrenbergstr. 16a<br>
+            10245 Berlin
+          </div>
+          
+          <h2>Social Media and other Online Presences</h2>
+          <p>This imprint also applies to the following social media presences and online profiles:</p>
+          <p>https://help.remoteyon.com<br>
+          https://git.remoteyon.com<br>
+          https://www.linkedin.com/company/remoteyon<br>
+          https://www.linkedin.com/in/yahyadodin<br>
+          https://www.xing.com/profile/Yahya_Dodin<br>
+          https://www.facebook.com/YahyaDodin</p>
+          
+          <h2>Liability and Copyright Notices</h2>
+          <p><strong>Disclaimer:</strong> The content of this website has been carefully prepared based on our current knowledge, but serves only for informational purposes and does not constitute legally binding assurances unless they are legally required information (e.g., imprint, privacy policy, terms and conditions, or mandatory consumer information). We reserve the right to change or delete content entirely or partially, provided contractual obligations remain unaffected. All offers are non-binding and without commitment.</p>
+
+          <p><strong>Links to external websites:</strong> Content on third-party websites that we reference directly or indirectly lies outside our area of responsibility, and we do not adopt it as our own. We assume no responsibility for content or damages arising from the use of information accessible on linked websites.</p>
+
+          <p><strong>Copyrights and trademarks:</strong> All content displayed on this website, such as texts, photographs, graphics, brands, and trademarks, is protected by respective rights (copyrights, trademarks). Use, reproduction, etc., are subject to our rights or those of the respective copyright holders.</p>
+
+          <p><strong>Notice of legal violations:</strong> If you notice any legal violations on our website, we ask you to inform us. We will remove illegal content and links immediately upon becoming aware of them.</p>
+
+          <h2>Image credits</h2>
+          <p>Image sources and copyright notices:</p>
+          <p>openclipart.org<br>
+          fontesk.com</p>
+        `,
+        headerLanguageLabel: "Language:",
+        footerPrivacy: "Privacy",
+        footerTerms: "Imprint"
+      },
+      ar: {
+        siteName: "ريموتيون للإستشارات التقنية",
+        navHome: "الرئيسية",
+        navAbout: "حول",
+        imprintTitle: "بيانات الشركة / الإشعار القانوني",
+        imprintSubtitle: "المعلومات القانونية وفقاً للمادة 5 من قانون TMG",
+        imprintContent: `
+          <div class="contact-item" dir="rtl">
+            <span class="contact-label">المزود:</span>
+            <strong>استشارات يحيى دودين لتقنية المعلومات</strong><br>
+            يحيى دودين<br>
+            شارع ريومور 20<br>
+            12207 برلين<br>
+            ألمانيا
+          </div>
+          
+          <div class="contact-item" dir="rtl">
+            <span class="contact-label">الاتصال:</span>
+            الهاتف: +49 30 555 765 49<br>
+            البريد الإلكتروني: <a href="mailto:info@remoteyon.de?Subject=Imprint">info@remoteyon.de</a>
+          </div>
+          
+          <div class="contact-item" dir="rtl">
+            <span class="contact-label">عنوان البريد:</span>
+            ريموتيون / استشارات يحيى دودين لتقنية المعلومات<br>
+            صندوق البريد 16297<br>
+            شارع إهرنبرغ 16أ<br>
+            10245 برلين
+          </div>
+          
+          <h2 dir="rtl">وسائل التواصل الاجتماعي والحضور الإلكتروني الأخرى</h2>
+          <p dir="rtl">ينطبق هذا البيان أيضاً على الحسابات التالية في وسائل التواصل الاجتماعي والملفات الشخصية الإلكترونية:</p>
+          <p dir="rtl">https://help.remoteyon.com<br>
+          https://git.remoteyon.com<br>
+          https://www.linkedin.com/company/remoteyon<br>
+          https://www.linkedin.com/in/yahyadodin<br>
+          https://www.xing.com/profile/Yahya_Dodin<br>
+          https://www.facebook.com/YahyaDodin</p>
+          
+          <h2 dir="rtl">إشعارات المسؤولية وحقوق الحماية</h2>
+          <p dir="rtl"><strong>إخلاء المسؤولية:</strong> تم إعداد محتوى هذا الموقع بعناية بناءً على معرفتنا الحالية، ولكنه يهدف فقط لأغراض إعلامية ولا يشكل ضمانات قانونية ملزمة إلا إذا كانت معلومات مطلوبة قانونياً (مثل بيانات الشركة، سياسة الخصوصية، شروط الاستخدام، أو المعلومات الإلزامية للمستهلكين). نحتفظ بالحق في تغيير أو حذف المحتوى كلياً أو جزئياً، شريطة عدم التأثير على الالتزامات التعاقدية. جميع العروض غير ملزمة وغير نهائية.</p>
+
+          <p dir="rtl"><strong>الروابط إلى مواقع خارجية:</strong> محتوى المواقع الخارجية التي نشير إليها مباشرة أو غير مباشر يقع خارج نطاق مسؤوليتنا، ولا نتبناه كملكنا. لا نتحمل أي مسؤولية عن المحتوى أو الأضرار الناتجة عن استخدام المعلومات المتاحة على المواقع المرتبطة.</p>
+
+          <p dir="rtl"><strong>حقوق الطبع والنشر والعلامات التجارية:</strong> جميع المحتويات المعروضة على هذا الموقع، مثل النصوص والصور الفوتوغرافية والرسومات والعلامات التجارية، محمية بحقوقها الخاصة (حقوق الطبع والنشر، حقوق العلامات التجارية). الاستخدام والتكرار إلخ تخضع لحقوقنا أو حقوق حاملي الحقوق المعنيين.</p>
+
+          <p dir="rtl"><strong>إشعار بالانتهاكات القانونية:</strong> إذا لاحظت أي انتهاكات قانونية على موقعنا، نرجو إبلاغنا بها. سنقوم بإزالة المحتوى غير القانوني والروابط فور علمِنا بها.</p>
+
+          <h2 dir="rtl">مصادر الصور</h2>
+          <p dir="rtl">مصادر الصور وإشعارات حقوق النشر:</p>
+          <p dir="rtl">openclipart.org<br>
+          fontesk.com</p>
+        `,
+        headerLanguageLabel: "اللغة:",
+        footerPrivacy: "الخصوصية",
+        footerTerms: "بيانات الشركة"
+      },
+      de: {
+        siteName: "remoteyon IT-Consulting",
+        navHome: "Startseite",
+        navAbout: "Über uns",
+        imprintTitle: "Impressum",
+        imprintSubtitle: "Angaben gemäß § 5 TMG",
+        imprintContent: `
+          <div class="contact-item">
+            <span class="contact-label">Anbieter:</span>
+            <strong>Yahya Dodin IT Consulting</strong><br>
+            Yahya Dodin<br>
+            Reaumurstr. 20<br>
+            12207 Berlin<br>
+			Deutschland
+          </div>
+          
+          <div class="contact-item">
+            <span class="contact-label">Kontakt:</span>
+            Telefon: +49 30 555 765 49<br>
+            E-Mail: <a href="mailto:info@remoteyon.de?Subject=Impressum">info@remoteyon.de</a>
+          </div>
+          
+          <div class="contact-item">
+            <span class="contact-label">Postanschrift:</span>
+            remoteyon / Yahya Dodin IT-Consulting<br>
+			Scanbox 16297<br>
+			Ehrenbergstr. 16a<br>
+			10245 Berlin
+          </div>
+          
+          <h2>Onlinepräsenzen</h2>
+          <p>Dieses Impressum gilt auch für die folgenden Social-Media-Präsenzen und Onlineprofile:</p>
+			<p>https://help.remoteyon.com<br>
+			https://git.remoteyon.com<br>
+			https://www.linkedin.com/company/remoteyon</br>
+			https://www.linkedin.com/in/yahyadodin<br>
+			https://www.xing.com/profile/Yahya_Dodin</br>
+			https://www.facebook.com/YahyaDodin</p>
+		  
+		  <h2>Haftungsausschluss</h2>
+			<p>Haftungsausschluss: Die Inhalte dieses Onlineangebotes wurden sorgfältig und nach unserem aktuellen Kenntnisstand erstellt, dienen jedoch nur der Information und entfalten keine rechtlich bindende Wirkung, sofern es sich nicht um gesetzlich verpflichtende Informationen (z.&nbsp;B. das Impressum, die Datenschutzerklärung, AGB oder verpflichtende Belehrungen von Verbrauchern) handelt. Wir behalten uns vor, die Inhalte vollständig oder teilweise zu ändern oder zu löschen, soweit vertragliche Verpflichtungen unberührt bleiben. Alle Angebote sind freibleibend und unverbindlich.</p>
+
+			<p>Links auf fremde Webseiten: Die Inhalte fremder Webseiten, auf die wir direkt oder indirekt verweisen, liegen außerhalb unseres Verantwortungsbereiches und wir machen sie uns nicht zu Eigen. Für alle Inhalte und Nachteile, die aus der Nutzung der in den verlinkten Webseiten aufrufbaren Informationen entstehen, übernehmen wir keine Verantwortung.</p>
+
+			<p>Urheberrechte und Markenrechte: Alle auf dieser Website dargestellten Inhalte, wie Texte, Fotografien, Grafiken, Marken und Warenzeichen sind durch die jeweiligen Schutzrechte (Urheberrechte, Markenrechte) geschützt. Die Verwendung, Vervielfältigung usw. unterliegen unseren Rechten oder den Rechten der jeweiligen Urheber bzw. Rechteinhaber.</p>
+
+			<p>Hinweise auf Rechtsverstöße: Sollten Sie innerhalb unseres Internetauftritts Rechtsverstöße bemerken, bitten wir Sie uns auf diese hinzuweisen. Wir werden rechtswidrige Inhalte und Links nach Kenntnisnahme unverzüglich entfernen.</p>
+
+			<h2>Quellangaben</h2>
+			<p>openclipart.org</br>
+			fontesk.com</p>
+        `,
+        headerLanguageLabel: "Sprache:",
+        footerPrivacy: "Datenschutz",
+        footerTerms: "Impressum"
+      }
+    };
+
+    const LANGUAGE_KEY = "site_language";
+    const THEME_KEY = "site_theme";
+
+    // Language helpers
+    function getCurrentLanguage() {
+      const stored = localStorage.getItem(LANGUAGE_KEY);
+      if (stored === "ar" || stored === "en" || stored === "de") return stored;
+      return "en";
+    }
+
+    function setCurrentLanguage(lang) {
+      localStorage.setItem(LANGUAGE_KEY, lang);
+    }
+
+    function applyTranslations(lang) {
+      const dictionary = translations[lang];
+      if (!dictionary) return;
+
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        const key = el.getAttribute("data-i18n");
+        if (dictionary[key]) {
+          el.textContent = dictionary[key];
+        }
+      });
+
+      const legalSection = document.querySelector("[data-i18n-section='imprintContent']");
+      if (legalSection && dictionary.imprintContent) {
+        legalSection.innerHTML = dictionary.imprintContent;
+      }
+
+      const select = document.getElementById("lang-select");
+      if (select && select.value !== lang) {
+        select.value = lang;
+      }
+    }
+
+    // Theme helpers
+    function getCurrentTheme() {
+      const stored = localStorage.getItem(THEME_KEY);
+      if (stored === "dark" || stored === "light") return stored;
+
+      const prefersDark =
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches;
+      return prefersDark ? "dark" : "light";
+    }
+
+    function applyTheme(theme) {
+      const body = document.body;
+      const toggle = document.getElementById("theme-toggle");
+
+      if (theme === "dark") {
+        body.classList.add("theme-dark");
+      } else {
+        body.classList.remove("theme-dark");
+      }
+
+      if (toggle) {
+        toggle.textContent = theme === "dark" ? "☀︎" : "☾";
+      }
+
+      localStorage.setItem(THEME_KEY, theme);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      // Language init
+      const initialLang = getCurrentLanguage();
+      applyTranslations(initialLang);
+
+      const langSelect = document.getElementById("lang-select");
+      if (langSelect) {
+        langSelect.value = initialLang;
+        langSelect.addEventListener("change", (event) => {
+          const next = event.target.value;
+          setCurrentLanguage(next);
+          applyTranslations(next);
+        });
+      }
+
+      // Theme init
+      const initialTheme = getCurrentTheme();
+      applyTheme(initialTheme);
+
+      const themeButton = document.getElementById("theme-toggle");
+      if (themeButton) {
+        themeButton.addEventListener("click", () => {
+          const current = getCurrentTheme();
+          const next = current === "dark" ? "light" : "dark";
+          applyTheme(next);
+        });
+      }
+    });
+  </script>
+</body>
+</html>

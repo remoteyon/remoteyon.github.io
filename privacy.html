@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>remoteyon - Privacy Policy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light dark" />
+  <style>
+    /* ====== Base reset ====== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    /* ====== Theme variables ====== */
+    :root {
+      --bg: #f5f5f7;
+      --bg-elevated: #ffffff;
+      --text-main: #111827;
+      --text-muted: #4b5563;
+      --border-subtle: rgba(0,0,0,0.06);
+      --header-bg: #111827;
+      --header-text: #f9fafb;
+      --footer-bg: #111827;
+      --footer-text: #d1d5db;
+      --footer-muted: #9ca3af;
+      --button-bg: #1f2937;
+      --button-border: #4b5563;
+      --button-bg-hover: #111827;
+      --button-border-hover: #9ca3af;
+    }
+
+    body.theme-dark {
+      --bg: #020617;
+      --bg-elevated: #020617;
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+      --border-subtle: rgba(148,163,184,0.35);
+      --header-bg: #020617;
+      --header-text: #e5e7eb;
+      --footer-bg: #020617;
+      --footer-text: #9ca3af;
+      --footer-muted: #6b7280;
+      --button-bg: #020617;
+      --button-border: #6b7280;
+      --button-bg-hover: #020617;
+      --button-border-hover: #e5e7eb;
+    }
+
+    /* ====== Layout ====== */
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      color: var(--text-main);
+      background-color: var(--bg);
+      transition: background-color 0.18s ease, color 0.18s ease;
+    }
+
+    /* ====== Header ====== */
+    header {
+      background-color: var(--header-bg);
+      color: var(--header-text);
+      padding: 1rem 1.5rem;
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      transition: background-color 0.15s ease, color 0.15s ease;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      background-color: #f9fafb;
+      color: #111827;
+    }
+
+    .header-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .lang-label {
+      font-size: 0.8rem;
+      color: var(--footer-muted);
+    }
+
+    .lang-select {
+      font-size: 0.8rem;
+      padding: 0.25rem 0.5rem;
+      border-radius: 999px;
+      border: 1px solid var(--button-border);
+      background-color: var(--button-bg);
+      color: #f9fafb;
+      cursor: pointer;
+      outline: none;
+    }
+
+    .lang-select:focus {
+      border-color: var(--button-border-hover);
+    }
+
+    .header-button {
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid var(--button-border);
+      background-color: var(--button-bg);
+      color: #f9fafb;
+      font-size: 0.8rem;
+      cursor: pointer;
+      min-width: 46px;
+      text-align: center;
+      transition: background-color 0.15s ease, border-color 0.15s ease;
+    }
+
+    .header-button:hover,
+    .header-button:focus {
+      background-color: var(--button-bg-hover);
+      border-color: var(--button-border-hover);
+      outline: none;
+    }
+
+    /* ====== Main ====== */
+    main {
+      flex: 1;
+      max-width: 1100px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 1.5rem;
+    }
+
+    .page-title {
+      font-size: 1.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .page-subtitle {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+
+    .legal-section {
+      background-color: var(--bg-elevated);
+      border-radius: 8px;
+      padding: 2rem;
+      box-shadow: 0 1px 3px var(--border-subtle);
+      margin-bottom: 2rem;
+    }
+
+    .legal-section h2 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      color: var(--text-main);
+      border-bottom: 2px solid var(--text-muted);
+      padding-bottom: 0.5rem;
+    }
+
+    .legal-section h3 {
+      font-size: 1.15rem;
+      margin: 1.5rem 0 0.75rem 0;
+      color: var(--text-main);
+    }
+
+    .legal-section p,
+    .legal-section li {
+      font-size: 0.97rem;
+      line-height: 1.7;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .legal-section ul {
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .legal-section li {
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-label {
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    /* ====== Footer ====== */
+    footer {
+      background-color: var(--footer-bg);
+      color: var(--footer-text);
+      padding: 0.85rem 1.5rem;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      font-size: 0.85rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-left {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+
+    /* ====== Responsive ====== */
+    @media (max-width: 640px) {
+      header {
+        padding: 0.75rem 1rem;
+      }
+
+      main {
+        padding: 1rem;
+      }
+
+      .header-inner {
+        align-items: flex-start;
+      }
+
+      nav ul {
+        gap: 0.5rem;
+      }
+
+      .legal-section {
+        padding: 1.5rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="logo" data-i18n="siteName">remoteyon IT consulting</div>
+
+      <nav>
+        <ul>
+          <li><a href="index.html" data-i18n="navHome">Home</a></li>
+          <li><a href="about.html" data-i18n="navAbout">About</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-controls">
+        <label
+          class="lang-label"
+          for="lang-select"
+          data-i18n="headerLanguageLabel"
+        >
+          Language:
+        </label>
+        <select
+          id="lang-select"
+          class="lang-select"
+          aria-label="Select language"
+        >
+          <option value="ar">العربية</option>
+          <option value="en" selected>English</option>
+          <option value="de">Deutsch</option>
+        </select>
+
+        <button
+          type="button"
+          class="header-button"
+          id="theme-toggle"
+          aria-label="Toggle dark mode"
+        >
+          ☾
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <h1 class="page-title" data-i18n="privacyTitle">Privacy Policy</h1>
+    <p class="page-subtitle" data-i18n="privacySubtitle">
+      Information on data protection
+    </p>
+
+    <section class="legal-section" data-i18n-section="privacyContent">
+      <!-- Content will be populated by JavaScript - Replace with your legal text -->
+      <div class="contact-item">
+        <span class="contact-label">Ready for your privacy policy text</span>
+        <p>Replace this placeholder content with your complete privacy policy text for each language.</p>
+        <p>This page has the exact same structure as imprint.html and supports:</p>
+        <ul>
+          <li>Long legal passages with proper typography</li>
+          <li>Multiple sections with H2/H3 headings</li>
+          <li>Lists, links, and contact information</li>
+          <li>Full RTL support for Arabic</li>
+          <li>Dark/light theme compatibility</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-left">
+        <span data-i18n="footerCopyright">
+          © 2026 remoteyon IT consulting. All rights reserved.
+        </span>
+        <div class="footer-links">
+          <a href="privacy.html" data-i18n="footerPrivacy">Privacy</a>
+          <a href="imprint.html" data-i18n="footerTerms">Imprint</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const translations = {
+      en: {
+        siteName: "remoteyon IT consulting",
+        navHome: "Home",
+        navAbout: "About",
+        privacyTitle: "Privacy Policy",
+        privacySubtitle: "Information on data protection",
+        privacyContent: `
+          <!-- REPLACE THIS WITH YOUR ENGLISH PRIVACY POLICY TEXT -->
+          <div class="contact-item">
+		  <h2>Data Controller</h2>
+		  <p>The data controller within the meaning of data protection laws, in particular the EU General Data Protection Regulation (GDPR), is:</p>
+		  <p><strong>Yahya Dodin IT Consulting</strong><br>
+		  Yahya Dodin<br>
+		  Reaumurstr. 20<br>
+		  12207 Berlin<br>
+		  Germany</p>
+		  <h2>Your Rights as Data Subject</h2>
+		  <p>You can exercise the following rights at any time using the contact details provided, in accordance with the EU General Data Protection Regulation (GDPR):</p>
+		  <ul>
+		  <li>Right of access to your data stored by us and its processing (Art. 15 GDPR),</li>
+		  <li>Right to rectification of incorrect personal data (Art. 16 GDPR),</li>
+		  <li>Right to erasure of your data stored by us (Art. 17 GDPR),</li>
+		  <li>Right to restriction of processing if we are not yet permitted to delete your data due to statutory obligations (Art. 18 GDPR),</li>
+		  <li>Right to object to the processing of your data by us (Art. 21 GDPR), and</li>
+		  <li>Right to data portability if you have consented to the data processing or have concluded a contract with us (Art. 20 GDPR).</li>
+		  </ul>
+		  <p>If you have granted us consent, you can withdraw it at any time with effect for the future.</p>
+		  <p>You can at any time contact a supervisory authority with a complaint, e.g., the supervisory authority responsible for your place of residence or the authority responsible for us as the controller.</p>
+		  <p>A list of supervisory authorities (for the non-public sector) with addresses can be found at: <a href="https://www.bfdi.bund.de/DE/Infothek/Anschriften_Links/anschriften_links-node.html">https://www.bfdi.bund.de/DE/Infothek/Anschriften_Links/anschriften_links-node.html</a>.</p>
+		  <h2>Processing Activities</h2>
+		  <h3>Contact Form</h3>
+		  <p>Nature and Purpose of Processing</p>
+		  <p>Contact is possible via the provided email addresses. In this case, the personal data of the user transmitted with the email is stored. This includes the date and time of email dispatch, email address, IP addresses, and information about the servers involved in the email communication.</p>
+		  <p>Regardless of the communication method chosen, we collect the content of your inquiry. Your data is stored for the purpose of individual communication with you.</p>
+		  <h4>Legal Basis</h4>
+		  <p>The data processing is carried out on the basis of a legitimate interest (Art. 6 para. 1 lit. f GDPR).</p>
+		  <p>Our legitimate interest in processing your data is to enable uncomplicated contact.</p>
+		  <p>If you contact us to request an offer, the data processing is carried out for the performance of pre-contractual measures (Art. 6 para. 1 lit. b GDPR).</p>
+		  <h4>Recipients</h4>
+		  <p>Recipients of the data may include technical service providers who act as processors for the operation and maintenance of our website.</p>
+		  <h4>Storage Duration</h4>
+		  <p>Data will be deleted no later than six months after processing the contact.</p>
+		  <p>If a contractual relationship arises, we are subject to statutory retention periods. These are generally 6 or 10 years for proper accounting and tax requirements.</p>
+		  <h4>Required or Necessary Provision</h4>
+		  <p>The provision of your personal data is voluntary. However, we can only process your inquiry if you provide us with the necessary data and the reason for the inquiry.</p>
+		  <h4>Objection</h4>
+		  <p>Please see the information on your right to object under Art. 21 GDPR below.</p>
+		  <h2>Information on Your Right to Object under Art. 21 GDPR</h2>
+		  <h3>Individual Right to Object</h3>
+		  <p>You have the right to object at any time, on grounds relating to your particular situation, to the processing of personal data concerning you which is based on Art. 6 para. 1 lit. f GDPR (data processing based on a balancing of interests); this also applies to profiling based on this provision within the meaning of Art. 4 No. 4 GDPR.</p>
+		  <p>If you object, we will no longer process your personal data unless we can demonstrate compelling legitimate grounds for the processing which override your interests, rights, and freedoms, or the processing serves the establishment, exercise, or defense of legal claims.</p>
+		  <h2>Changes to Our Privacy Policy</h2>
+		  <p>We reserve the right to adapt this privacy policy to always comply with current legal requirements or to implement changes to our services in the privacy policy, e.g., when introducing new services. The new privacy policy will apply on your next visit.</p>
+		  <h2>Questions on Data Protection</h2>
+		  <p>If you have any questions regarding data protection, please send us an email to the controller named above.</p>
+		  <h2>Copyright Notice</h2>
+		  <p><em>This privacy policy was created with the help of activeMind AG – experts for <a href="https://www.activemind.de/datenschutz/datenschutzbeauftragter/" target="_blank" rel="noopener dofollow">external data protection officers</a> (Version #2024-10-25).</em></p>
+		</div>
+        `,
+        headerLanguageLabel: "Language:",
+        footerPrivacy: "Privacy",
+        footerTerms: "Imprint"
+      },
+      ar: {
+        siteName: "ريموتيون للإستشارات التقنية",
+        navHome: "الرئيسية",
+        navAbout: "حول",
+        privacyTitle: "سياسة الخصوصية",
+        privacySubtitle: "معلومات حول حماية البيانات",
+        privacyContent: `
+          <!-- REPLACE THIS WITH YOUR ARABIC PRIVACY POLICY TEXT -->
+          <div class="contact-item" dir="rtl">
+		  <h2>المتحكم في البيانات</h2>
+		  <p>المتحكم في البيانات بموجب قوانين حماية البيانات، وخاصة اللائحة العامة لحماية البيانات في الاتحاد الأوروبي (GDPR)، هو:</p>
+		  <p><strong>يحيى دودين للإستشارات التقنية</strong><br>
+		  يحيى دودين<br>
+		  شارع ريمور 20<br>
+		  12207 برلين<br>
+		  ألمانيا</p>
+		  <h2>حقوقك كشخص معني بالبيانات</h2>
+		  <p>يمكنك ممارسة الحقوق التالية في أي وقت باستخدام بيانات الاتصال المقدمة، وفقاً للائحة العامة لحماية البيانات في الاتحاد الأوروبي (GDPR):</p>
+		  <ul dir="rtl">
+		  <li>الحق في الوصول إلى بياناتك المخزنة لدينا وعملية معالجتها (المادة 15 GDPR)،</li>
+		  <li>الحق في تصحيح البيانات الشخصية غير الصحيحة (المادة 16 GDPR)،</li>
+		  <li>الحق في حذف بياناتك المخزنة لدينا (المادة 17 GDPR)،</li>
+		  <li>الحق في تقييد المعالجة إذا لم نكن مسموحاً لنا بحذف بياناتك بعد بسبب الالتزامات القانونية (المادة 18 GDPR)،</li>
+		  <li>الحق في الاعتراض على معالجة بياناتك لدينا (المادة 21 GDPR)، و</li>
+		  <li>الحق في نقل البيانات إذا كنت قد وافقت على معالجة البيانات أو عقدت عقداً معنا (المادة 20 GDPR).</li>
+		  </ul>
+		  <p>إذا كنت قد منحتنا موافقة، يمكنك سحبها في أي وقت مع تأثير للمستقبل.</p>
+		  <p>يمكنك في أي وقت الاتصال بسلطة رقابية بشكوى، مثل سلطة الرقابة المسؤولة عن مكان إقامتك أو السلطة المسؤولة عنا كمتحكم.</p>
+		  <p>قائمة بالسلطات الرقابية (للقطاع غير العام) مع العناوين متوفرة على: <a href="https://www.bfdi.bund.de/DE/Infothek/Anschriften_Links/anschriften_links-node.html">https://www.bfdi.bund.de/DE/Infothek/Anschriften_Links/anschriften_links-node.html</a>.</p>
+		  <h2>أنشطة المعالجة</h2>
+		  <h3>الاتصال بنا</h3>
+		  <p>طبيعة وغرض المعالجة</p>
+		  <p>يمكن الاتصال عبر عناوين البريد الإلكتروني المقدمة. في هذه الحالة، يتم تخزين البيانات الشخصية للمستخدم المرسلة مع البريد الإلكتروني. يشمل ذلك تاريخ ووقت إرسال البريد، وعنوان البريد، وعناوين IP، ومعلومات حول الخوادم المشاركة في الاتصال.</p>
+		  <p>بغض النظر عن طريقة الاتصال المختارة، نجمع محتوى استفسارك. يتم تخزين بياناتك لغرض الاتصال الفردي معك.</p>
+		  <h4>الأساس القانوني</h4>
+		  <p>تتم معالجة البيانات على أساس مصلحة مشروعة (المادة 6 الفقرة 1 حرف f GDPR).</p>
+		  <p>مصلحتنا المشروعة في معالجة بياناتك هي تمكين اتصال غير معقد.</p>
+		  <p>إذا اتصلت بنا لطلب عرض، تتم معالجة البيانات لتنفيذ إجراءات ما قبل العقد (المادة 6 الفقرة 1 حرف b GDPR).</p>
+		  <h4>المستلمون</h4>
+		  <p>مستلمو البيانات هم مقدمو الخدمات التقنية الذين يعملون كمعالجين لتشغيل وصيانة موقعنا.</p>
+		  <h4>مدة التخزين</h4>
+		  <p>سيتم حذف البيانات بعد ستة أشهر على الأكثر بعد معالجة الاتصال.</p>
+		  <p>إذا نشأ علاقة عقدية، نخضع لفترات التخزين القانونية. تبلغ عادة 6 أو 10 سنوات لأسباب المحاسبة السليمة والمتطلبات الضريبية.</p>
+		  <h4>التوفير المطلوب أو الضروري</h4>
+		  <p>تقديم بياناتك الشخصية طوعي. ومع ذلك، لا يمكننا معالجة استفسارك إلا إذا قدمت لنا البيانات الضرورية وسبب الاستفسار.</p>
+		  <h4>الاعتراض</h4>
+		  <p>يرجى قراءة المعلومات حول حق الاعتراض الخاص بك بموجب المادة 21 GDPR أدناه.</p>
+		  <h2>معلومات حول حق الاعتراض الخاص بك بموجب المادة 21 GDPR</h2>
+		  <h3>حق الاعتراض الفردي</h3>
+		  <p>لديك الحق في الاعتراض في أي وقت، لأسباب تتعلق بوضعك الخاص، على معالجة البيانات الشخصية المتعلقة بك والتي تستند إلى المادة 6 الفقرة 1 حرف f GDPR (معالجة البيانات على أساس موازنة المصالح)؛ وينطبق ذلك أيضاً على التحليل الشخصي المبني على هذه الفقرة بموجب المادة 4 رقم 4 GDPR.</p>
+		  <p>إذا اعترضت، لن نعالج بياناتك الشخصية بعد، ما لم نتمكن من إثبات أسباب مشروعة قوية تستحق الحماية للمعالجة تفوق مصالحك وحقوقك وحرياتك، أو تخدم المعالجة الادعاء أو التمرين أو الدفاع عن المطالبات القانونية.</p>
+		  <h2>تغييرات في سياسة الخصوصية الخاصة بنا</h2>
+		  <p>نحتفظ بالحق في تعديل سياسة الخصوصية هذه لتتوافق دائماً مع المتطلبات القانونية الحالية أو لتنفيذ تغييرات في خدماتنا في سياسة الخصوصية، مثل عند إدخال خدمات جديدة. ستطبق سياسة الخصوصية الجديدة في زيارتك التالية.</p>
+		  <h2>أسئلة حول حماية البيانات</h2>
+		  <p>إذا كان لديك أسئلة حول حماية البيانات، يرجى إرسال بريد إلكتروني إلى المتحكم المذكور أعلاه.</p>
+		  <h2>إشعارات حقوق النشر</h2>
+		  <p><em>تم إنشاء سياسة الخصوصية هذه بمساعدة activeMind AG – خبراء في <a href="https://www.activemind.de/datenschutz/datenschutzbeauftragter/" target="_blank" rel="noopener dofollow">مسؤولي حماية البيانات الخارجيين</a> (الإصدار #2024-10-25).</em></p>
+		</div>
+        `,
+        headerLanguageLabel: "اللغة:",
+        footerPrivacy: "الخصوصية",
+        footerTerms: "بيانات الشركة"
+      },
+      de: {
+        siteName: "remoteyon IT-Consulting",
+        navHome: "Startseite",
+        navAbout: "Über uns",
+        privacyTitle: "Datenschutzerklärung",
+        privacySubtitle: "Informationen zum Datenschutz",
+        privacyContent: `
+          <!-- REPLACE THIS WITH YOUR GERMAN PRIVACY POLICY TEXT -->
+          <div class="contact-item">
+            <h2>Verantwortlicher</h2>
+			<p>Verantwortlicher im Sinne der Datenschutzgesetze, insbesondere der EU-Datenschutz-Grundverordnung (DSGVO), ist:</p>
+			<p><strong>Yahya Dodin IT Consulting</strong><br>
+            Yahya Dodin<br>
+            Reaumurstr. 20<br>
+            12207 Berlin<br>
+			Deutschland</p>
+			<h2>Ihre Betroffenenrechte</h2>
+			<p>Unter den angegebenen Kontaktdaten können Sie gemäß EU-Datenschutz-Grundverordnung (DSGVO) jederzeit folgende Rechte ausüben:</p>
+			<ul>
+			<li>Auskunft über Ihre bei uns gespeicherten Daten und deren Verarbeitung (Art. 15 DSGVO),</li>
+			<li>Berichtigung unrichtiger personenbezogener Daten (Art. 16 DSGVO),</li>
+			<li>Löschung Ihrer bei uns gespeicherten Daten (Art. 17 DSGVO),</li>
+			<li>Einschränkung der Datenverarbeitung, sofern wir Ihre Daten aufgrund gesetzlicher Pflichten noch nicht löschen dürfen (Art. 18 DSGVO),</li>
+			<li>Widerspruch gegen die Verarbeitung Ihrer Daten bei uns (Art. 21 DSGVO) und</li>
+			<li>Datenübertragbarkeit, sofern Sie in die Datenverarbeitung eingewilligt haben oder einen Vertrag mit uns abgeschlossen haben (Art. 20 DSGVO).</li>
+			</ul>
+			<p>Sofern Sie uns eine Einwilligung erteilt haben, können Sie diese jederzeit mit Wirkung für die Zukunft widerrufen.</p>
+			<p>Sie können sich jederzeit mit einer Beschwerde an eine Aufsichtsbehörde wenden, z. B. an die zuständige Aufsichtsbehörde des Bundeslands Ihres Wohnsitzes oder an die für uns als verantwortliche Stelle zuständige Behörde.</p>
+			<p>Eine Liste der Aufsichtsbehörden (für den nichtöffentlichen Bereich) mit Anschrift finden Sie unter: <a href="https://www.bfdi.bund.de/DE/Infothek/Anschriften_Links/anschriften_links-node.html">https://www.bfdi.bund.de/DE/Infothek/Anschriften_Links/anschriften_links-node.html</a>.</p>
+			<h2>Verarbeitungstätigkeiten</h2>
+			<h3>Kontaktaufnahme</h3>
+			<p>Art und Zweck der Verarbeitung</p>
+			<p>Eine Kontaktaufnahme ist über die bereitgestellten E-Mail-Adressen möglich. In diesem Fall werden die mit der E-Mail übermittelten personenbezogenen Daten des Nutzers gespeichert. Hierzu zählen Datum und Uhrzeit des E-Mailversands, E-Mailadresse, IP-Adressen sowie Informationen zu den an der E-Mail-Kommunikation beteiligten Servern.</p>
+			<p>Unabhängig von der gewählten Kommunikationsart erheben wir den Inhalt Ihrer Anfrage. Ihre Daten werden zum Zweck der individuellen Kommunikation mit Ihnen gespeichert.</p>
+			<h4>Rechtsgrundlage</h4>
+			<p>Die Verarbeitung der Daten erfolgt auf der Grundlage eines berechtigten Interesses (Art. 6 Abs. 1 lit. f DSGVO).</p>
+			<p>Unser berechtigtes Interesse an der Verarbeitung Ihrer Daten ist die Ermöglichung einer unkomplizierten Kontaktaufnahme.</p>
+			<p>Sofern Sie mit uns Kontakt aufnehmen, um ein Angebot zu erfragen, erfolgt die Verarbeitung der Daten zur Durchführung vorvertraglicher Maßnahmen (Art. 6 Abs. 1 lit. b DSGVO).</p>
+			<h4>Empfänger</h4>
+			<p>Empfänger der Daten sind ggf. technische Dienstleister, die für den Betrieb und die Wartung unserer Webseite als Auftragsverarbeiter tätig werden.</p>
+			<h4>Speicherdauer</h4>
+			<p>Daten werden spätestens Sechs Monate nach Bearbeitung der Kontaktaufnahme gelöscht.</p>
+			<p>Sofern es zu einem Vertragsverhältnis kommt, unterliegen wir den gesetzlichen Aufbewahrungsfristen. Diese betragen grundsätzlich 6 oder 10 Jahre aus Gründen der ordnungsmäßigen Buchführung und steuerrechtlichen Anforderungen.</p>
+			<h4>Bereitstellung vorgeschrieben oder erforderlich</h4>
+			<p>Die Bereitstellung Ihrer personenbezogenen Daten erfolgt freiwillig. Wir können Ihre Anfrage jedoch nur bearbeiten, sofern Sie uns die erforderlichen Daten und den Grund der Anfrage mitteilen.</p>
+			<h4>Widerspruch</h4>
+			<p>Lesen Sie dazu die Informationen über Ihr Widerspruchsrecht nach Art. 21 DSGVO weiter unten.</p>
+			<h2>Information über Ihr Widerspruchsrecht nach Art. 21 DSGVO</h2>
+			<h3>Einzelfallbezogenes Widerspruchsrecht</h3>
+			<p>Sie haben das Recht, aus Gründen, die sich aus Ihrer besonderen Situation ergeben, jederzeit gegen die Verarbeitung Sie betreffender personenbezogener Daten, die aufgrund Art. 6 Abs. 1 lit. f DSGVO (Datenverarbeitung auf der Grundlage einer Interessenabwägung) erfolgt, Widerspruch einzulegen; dies gilt auch für ein auf diese Bestimmung gestütztes Profiling im Sinne von Art. 4 Nr. 4 DSGVO.</p>
+			<p>Legen Sie Widerspruch ein, werden wir Ihre personenbezogenen Daten nicht mehr verarbeiten, es sei denn, wir können zwingende schutzwürdige Gründe für die Verarbeitung nachweisen, die Ihre Interessen, Rechte und Freiheiten überwiegen, oder die Verarbeitung dient der Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen.</p>
+			<h2>Änderung unserer Datenschutzerklärung</h2>
+			<p>Wir behalten uns vor, diese Datenschutzerklärung anzupassen, damit sie stets den aktuellen rechtlichen Anforderungen entspricht oder um Änderungen unserer Leistungen in der Datenschutzerklärung umzusetzen, z.B. bei der Einführung neuer Services. Für Ihren erneuten Besuch gilt dann die neue Datenschutzerklärung.</p>
+			<h2>Fragen zum Datenschutz</h2>
+			<p>Wenn Sie Fragen zum Datenschutz haben, schreiben Sie uns bitte eine E-Mail an den oben genannten Verantwortlichen.</p>
+			<h2>Urheberrechtliche Hinweise</h2>
+			<p><em>Diese Datenschutzerklärung wurde mit Hilfe der activeMind AG erstellt – den Experten für <a href="https://www.activemind.de/datenschutz/datenschutzbeauftragter/" target="_blank" rel="noopener dofollow">externe Datenschutzbeauftragte</a> (Version #2024-10-25).</em></p>
+          </div>
+        `,
+        headerLanguageLabel: "Sprache:",
+        footerPrivacy: "Datenschutz",
+        footerTerms: "Impressum"
+      }
+    };
+
+    const LANGUAGE_KEY = "site_language";
+    const THEME_KEY = "site_theme";
+
+    // Language helpers
+    function getCurrentLanguage() {
+      const stored = localStorage.getItem(LANGUAGE_KEY);
+      if (stored === "ar" || stored === "en" || stored === "de") return stored;
+      return "en";
+    }
+
+    function setCurrentLanguage(lang) {
+      localStorage.setItem(LANGUAGE_KEY, lang);
+    }
+
+    function applyTranslations(lang) {
+      const dictionary = translations[lang];
+      if (!dictionary) return;
+
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        const key = el.getAttribute("data-i18n");
+        if (dictionary[key]) {
+          el.textContent = dictionary[key];
+        }
+      });
+
+      const legalSection = document.querySelector("[data-i18n-section='privacyContent']");
+      if (legalSection && dictionary.privacyContent) {
+        legalSection.innerHTML = dictionary.privacyContent;
+      }
+
+      const select = document.getElementById("lang-select");
+      if (select && select.value !== lang) {
+        select.value = lang;
+      }
+    }
+
+    // Theme helpers
+    function getCurrentTheme() {
+      const stored = localStorage.getItem(THEME_KEY);
+      if (stored === "dark" || stored === "light") return stored;
+
+      const prefersDark =
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches;
+      return prefersDark ? "dark" : "light";
+    }
+
+    function applyTheme(theme) {
+      const body = document.body;
+      const toggle = document.getElementById("theme-toggle");
+
+      if (theme === "dark") {
+        body.classList.add("theme-dark");
+      } else {
+        body.classList.remove("theme-dark");
+      }
+
+      if (toggle) {
+        toggle.textContent = theme === "dark" ? "☀︎" : "☾";
+      }
+
+      localStorage.setItem(THEME_KEY, theme);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      // Language init
+      const initialLang = getCurrentLanguage();
+      applyTranslations(initialLang);
+
+      const langSelect = document.getElementById("lang-select");
+      if (langSelect) {
+        langSelect.value = initialLang;
+        langSelect.addEventListener("change", (event) => {
+          const next = event.target.value;
+          setCurrentLanguage(next);
+          applyTranslations(next);
+        });
+      }
+
+      // Theme init
+      const initialTheme = getCurrentTheme();
+      applyTheme(initialTheme);
+
+      const themeButton = document.getElementById("theme-toggle");
+      if (themeButton) {
+        themeButton.addEventListener("click", () => {
+          const current = getCurrentTheme();
+          const next = current === "dark" ? "light" : "dark";
+          applyTheme(next);
+        });
+      }
+    });
+  </script>
+</body>
+</html>

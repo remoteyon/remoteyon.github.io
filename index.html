@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>remoteyon - Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light dark" />
+  <style>
+    /* ====== Base reset ====== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    /* ====== Theme variables ====== */
+    :root {
+      --bg: #f5f5f7;
+      --bg-elevated: #ffffff;
+      --text-main: #111827;
+      --text-muted: #4b5563;
+      --border-subtle: rgba(0,0,0,0.06);
+      --header-bg: #111827;
+      --header-text: #f9fafb;
+      --footer-bg: #111827;
+      --footer-text: #d1d5db;
+      --footer-muted: #9ca3af;
+      --button-bg: #1f2937;
+      --button-border: #4b5563;
+      --button-bg-hover: #111827;
+      --button-border-hover: #9ca3af;
+    }
+
+    body.theme-dark {
+      --bg: #020617;
+      --bg-elevated: #020617;
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+      --border-subtle: rgba(148,163,184,0.35);
+      --header-bg: #020617;
+      --header-text: #e5e7eb;
+      --footer-bg: #020617;
+      --footer-text: #9ca3af;
+      --footer-muted: #6b7280;
+      --button-bg: #020617;
+      --button-border: #6b7280;
+      --button-bg-hover: #020617;
+      --button-border-hover: #e5e7eb;
+    }
+
+    /* ====== Layout ====== */
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      color: var(--text-main);
+      background-color: var(--bg);
+      transition: background-color 0.18s ease, color 0.18s ease;
+    }
+
+    /* ====== Header ====== */
+    header {
+      background-color: var(--header-bg);
+      color: var(--header-text);
+      padding: 1rem 1.5rem;
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      transition: background-color 0.15s ease, color 0.15s ease;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      background-color: #f9fafb;
+      color: #111827;
+    }
+
+    .header-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .lang-label {
+      font-size: 0.8rem;
+      color: var(--footer-muted);
+    }
+
+    .lang-select {
+      font-size: 0.8rem;
+      padding: 0.25rem 0.5rem;
+      border-radius: 999px;
+      border: 1px solid var(--button-border);
+      background-color: var(--button-bg);
+      color: #f9fafb;
+      cursor: pointer;
+      outline: none;
+    }
+
+    .lang-select:focus {
+      border-color: var(--button-border-hover);
+    }
+
+    .header-button {
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid var(--button-border);
+      background-color: var(--button-bg);
+      color: #f9fafb;
+      font-size: 0.8rem;
+      cursor: pointer;
+      min-width: 46px;
+      text-align: center;
+      transition: background-color 0.15s ease, border-color 0.15s ease;
+    }
+
+    .header-button:hover,
+    .header-button:focus {
+      background-color: var(--button-bg-hover);
+      border-color: var(--button-border-hover);
+      outline: none;
+    }
+
+    /* ====== Main ====== */
+    main {
+      flex: 1;
+      max-width: 1100px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 1.5rem;
+    }
+
+    .page-title {
+      font-size: 1.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .page-subtitle {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .content-block {
+      background-color: var(--bg-elevated);
+      border-radius: 8px;
+      padding: 1.25rem 1.5rem;
+      box-shadow: 0 1px 3px var(--border-subtle);
+      margin-bottom: 1.5rem;
+    }
+
+    .content-block h2 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .content-block p {
+      font-size: 0.97rem;
+      line-height: 1.6;
+      color: var(--text-muted);
+    }
+
+    /* ====== Footer ====== */
+    footer {
+      background-color: var(--footer-bg);
+      color: var(--footer-text);
+      padding: 0.85rem 1.5rem;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      font-size: 0.85rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-left {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+
+    /* ====== Responsive ====== */
+    @media (max-width: 640px) {
+      header {
+        padding: 0.75rem 1rem;
+      }
+
+      main {
+        padding: 1rem;
+      }
+
+      .header-inner {
+        align-items: flex-start;
+      }
+
+      nav ul {
+        gap: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="logo" data-i18n="siteName">remoteyon IT consulting</div>
+
+      <nav>
+        <ul>
+          <li><a href="index.html" data-i18n="navHome">Home</a></li>
+          <li><a href="about.html" data-i18n="navAbout">About</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-controls">
+        <label
+          class="lang-label"
+          for="lang-select"
+          data-i18n="headerLanguageLabel"
+        >
+          Language:
+        </label>
+        <select
+          id="lang-select"
+          class="lang-select"
+          aria-label="Select language"
+        >
+          <option value="ar">العربية</option>
+          <option value="en" selected>English</option>
+          <option value="de">Deutsch</option>
+        </select>
+
+        <button
+          type="button"
+          class="header-button"
+          id="theme-toggle"
+          aria-label="Toggle dark mode"
+        >
+          ☾
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <h1 class="page-title" data-i18n="homeTitle">Welcome to the home page</h1>
+    <p class="page-subtitle" data-i18n="homeSubtitle">
+      This is an empty starter layout you can customize.
+    </p>
+
+    <section class="content-block">
+      <h2 data-i18n="homeBlock1Title">Getting started</h2>
+      <p data-i18n="homeBlock1Body">
+        Replace these sections with your own content. Use this file as a base for building out your pages.
+      </p>
+    </section>
+
+    <section class="content-block">
+      <h2 data-i18n="homeBlock2Title">Reusable layout</h2>
+      <p data-i18n="homeBlock2Body">
+        The header and footer are identical across pages. Update one file, duplicate it, and then adjust only the main content area.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-left">
+        <span data-i18n="footerCopyright">
+          © 2026 remoteyon IT consulting. All rights reserved.
+        </span>
+        <div class="footer-links">
+          <a href="privacy.html" data-i18n="footerPrivacy">Privacy</a>
+          <a href="imprint.html" data-i18n="footerTerms">Imprint</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const translations = {
+      en: {
+        siteName: "remoteyon IT consulting",
+        navHome: "Home",
+        navAbout: "About",
+        homeTitle: "Welcome to the home page",
+        homeSubtitle: "This is an empty starter layout you can customize.",
+        homeBlock1Title: "Getting started",
+        homeBlock1Body:
+          "Replace these sections with your own content. Use this file as a base for building out your pages.",
+        homeBlock2Title: "Reusable layout",
+        homeBlock2Body:
+          "The header and footer are identical across pages. Update one file, duplicate it, and then adjust only the main content area.",
+        headerLanguageLabel: "Language:",
+        footerPrivacy: "Privacy",
+        footerTerms: "Imprint"
+      },
+      ar: {
+        siteName: "ريموتيون للإستشارات التقنية",
+        navHome: "الرئيسية",
+        navAbout: "حول",
+        homeTitle: "مرحبًا بك في الصفحة الرئيسية",
+        homeSubtitle: "هذا تصميم مبدئي فارغ يمكنك تخصيصه.",
+        homeBlock1Title: "البدء",
+        homeBlock1Body:
+          "استبدل هذه الأقسام بالمحتوى الخاص بك. استخدم هذا الملف كأساس لبناء صفحاتك.",
+        homeBlock2Title: "تصميم قابل لإعادة الاستخدام",
+        homeBlock2Body:
+          "يبقى الترويسة والتذييل متطابقين في جميع الصفحات. حدّث ملفًا واحدًا وكررّه ثم عدّل منطقة المحتوى فقط.",
+        headerLanguageLabel: "اللغة:",
+        footerPrivacy: "الخصوصية",
+        footerTerms: "بيانات الشركة"
+      },
+      de: {
+        siteName: "remoteyon IT-Consulting",
+        navHome: "Startseite",
+        navAbout: "Über uns",
+        homeTitle: "Willkommen auf der Startseite",
+        homeSubtitle:
+          "Dies ist ein leeres Startlayout, das du anpassen kannst.",
+        homeBlock1Title: "Erste Schritte",
+        homeBlock1Body:
+          "Ersetze diese Abschnitte durch eigene Inhalte. Verwende diese Datei als Basis für deine Seiten.",
+        homeBlock2Title: "Wiederverwendbares Layout",
+        homeBlock2Body:
+          "Kopf- und Fußbereich sind auf allen Seiten identisch. Aktualisiere eine Datei, dupliziere sie und passe nur den Hauptinhalt an.",
+        headerLanguageLabel: "Sprache:",
+        footerPrivacy: "Datenschutz",
+        footerTerms: "Impressum"
+      }
+    };
+
+    const LANGUAGE_KEY = "site_language";
+    const THEME_KEY = "site_theme";
+
+    // Language helpers
+    function getCurrentLanguage() {
+      const stored = localStorage.getItem(LANGUAGE_KEY);
+      if (stored === "ar" || stored === "en" || stored === "de") return stored;
+      return "en";
+    }
+
+    function setCurrentLanguage(lang) {
+      localStorage.setItem(LANGUAGE_KEY, lang);
+    }
+
+    function applyTranslations(lang) {
+      const dictionary = translations[lang];
+      if (!dictionary) return;
+
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        const key = el.getAttribute("data-i18n");
+        if (dictionary[key]) {
+          el.textContent = dictionary[key];
+        }
+      });
+
+      const select = document.getElementById("lang-select");
+      if (select && select.value !== lang) {
+        select.value = lang;
+      }
+    }
+
+    // Theme helpers
+    function getCurrentTheme() {
+      const stored = localStorage.getItem(THEME_KEY);
+      if (stored === "dark" || stored === "light") return stored;
+
+      const prefersDark =
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches;
+      return prefersDark ? "dark" : "light";
+    }
+
+    function applyTheme(theme) {
+      const body = document.body;
+      const toggle = document.getElementById("theme-toggle");
+
+      if (theme === "dark") {
+        body.classList.add("theme-dark");
+      } else {
+        body.classList.remove("theme-dark");
+      }
+
+      if (toggle) {
+        toggle.textContent = theme === "dark" ? "☀︎" : "☾";
+      }
+
+      localStorage.setItem(THEME_KEY, theme);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      // Language init
+      const initialLang = getCurrentLanguage();
+      applyTranslations(initialLang);
+
+      const langSelect = document.getElementById("lang-select");
+      if (langSelect) {
+        langSelect.value = initialLang;
+        langSelect.addEventListener("change", (event) => {
+          const next = event.target.value;
+          setCurrentLanguage(next);
+          applyTranslations(next);
+        });
+      }
+
+      // Theme init
+      const initialTheme = getCurrentTheme();
+      applyTheme(initialTheme);
+
+      const themeButton = document.getElementById("theme-toggle");
+      if (themeButton) {
+        themeButton.addEventListener("click", () => {
+          const current = getCurrentTheme();
+          const next = current === "dark" ? "light" : "dark";
+          applyTheme(next);
+        });
+      }
+    });
+  </script>
+</body>
+</html>
