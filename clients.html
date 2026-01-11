@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>remoteyon - Home</title>
+  <title>remoteyon - Clients</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="color-scheme" content="light dark" />
   <style>
@@ -80,7 +80,7 @@
     }
 
     .header-inner {
-      max-width: 1100px;
+      max-width: 1400px;
       margin: 0 auto;
       display: flex;
       align-items: center;
@@ -162,7 +162,7 @@
     /* ====== Main ====== */
     main {
       flex: 1;
-      max-width: 1100px;
+      max-width: 1400px;
       margin: 0 auto;
       width: 100%;
       padding: 1.5rem;
@@ -176,26 +176,66 @@
     .page-subtitle {
       font-size: 1rem;
       color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+
+    /* ====== Customer Cards Grid - 5 ACROSS ====== */
+    .customers-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1rem;
       margin-bottom: 1.5rem;
     }
 
-    .content-block {
+    .customer-card {
+      display: block;
       background-color: var(--bg-elevated);
       border-radius: 8px;
-      padding: 1.25rem 1.5rem;
+      padding: 1rem;
       box-shadow: 0 1px 3px var(--border-subtle);
-      margin-bottom: 1.5rem;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      text-decoration: none;
     }
 
-    .content-block h2 {
-      font-size: 1.25rem;
-      margin-bottom: 0.5rem;
+    .customer-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px var(--border-subtle);
     }
 
-    .content-block p {
-      font-size: 0.97rem;
-      line-height: 1.6;
+    .customer-card:active {
+      transform: translateY(-1px);
+    }
+
+    .customer-thumbnail {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 3/4;
+      background: linear-gradient(135deg, #e5e7eb 0%, #d1d5db 100%);
+      border-radius: 8px;
+      margin-bottom: 0.75rem;
+      /* ALIGN IMAGES TO TOP */
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      background-size: cover;
+      background-position: top center;
+      background-repeat: no-repeat;
+      padding: 0.5rem;
       color: var(--text-muted);
+      font-size: 0.8rem;
+      font-weight: 500;
+      border: 2px dashed currentColor;
+    }
+
+    body.theme-dark .customer-thumbnail {
+      background: linear-gradient(135deg, #374151 0%, #4b5563 100%);
+    }
+
+    .customer-name {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      font-style: italic;
+      text-align: center;
     }
 
     /* ====== Footer ====== */
@@ -206,7 +246,7 @@
     }
 
     .footer-inner {
-      max-width: 1100px;
+      max-width: 1400px;
       margin: 0 auto;
       display: flex;
       align-items: center;
@@ -236,6 +276,24 @@
     }
 
     /* ====== Responsive ====== */
+    @media (max-width: 1200px) {
+      .customers-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.25rem;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .customers-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+      
+      main, .header-inner, .footer-inner {
+        max-width: 1100px;
+      }
+    }
+
     @media (max-width: 640px) {
       header {
         padding: 0.75rem 1rem;
@@ -251,6 +309,11 @@
 
       nav ul {
         gap: 0.5rem;
+      }
+
+      .customers-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
       }
     }
   </style>
@@ -298,24 +361,42 @@
   </header>
 
   <main>
-    <h1 class="page-title" data-i18n="homeTitle">Welcome to the home page</h1>
-    <p class="page-subtitle" data-i18n="homeSubtitle">
-      This is an empty starter layout you can customize.
+    <h1 class="page-title" data-i18n="customersTitle">Client Recommendation Letters</h1>
+    <p class="page-subtitle" data-i18n="customersSubtitle">
+      Read what our satisfied clients have said about our IT consulting services.
     </p>
 
-    <section class="content-block">
-      <h2 data-i18n="homeBlock1Title">Getting started</h2>
-      <p data-i18n="homeBlock1Body">
-        Replace these sections with your own content. Use this file as a base for building out your pages.
-      </p>
-    </section>
+    <div class="customers-grid">
+      <!-- 2022 EN -->
+      <a href="clients/2022 EN anonymized (Large).png" class="customer-card" aria-label="View full recommendation letter">
+        <div class="customer-thumbnail" style="background-image: url('clients/2022 EN anonymized (Phone).png')"></div>
+        <div class="customer-name">International marketing software client, Berlin, Germany</div>
+      </a>
 
-    <section class="content-block">
-      <h2 data-i18n="homeBlock2Title">Reusable layout</h2>
-      <p data-i18n="homeBlock2Body">
-        The header and footer are identical across pages. Update one file, duplicate it, and then adjust only the main content area.
-      </p>
-    </section>
+      <!-- 2021 DE -->
+      <a href="clients/2021 DE anonymized (Large).png" class="customer-card" aria-label="View full recommendation letter">
+        <div class="customer-thumbnail" style="background-image: url('clients/2021 DE anonymized (Phone).png')"></div>
+        <div class="customer-name">Client in real estate, Berlin, Germany (German)</div>
+      </a>
+	  
+      <!-- 2019 EN -->
+      <a href="clients/2019 EN anonymized (Groß).jpg" class="customer-card" aria-label="View full recommendation letter">
+        <div class="customer-thumbnail" style="background-image: url('clients/2019 EN anonymized (Handy).jpg')"></div>
+        <div class="customer-name">International client in fintech, Berlin, Germany</div>
+      </a>
+	
+      <!-- 2018 DE -->
+      <a href="clients/2018 DE anonymized (Groß).jpg" class="customer-card" aria-label="View full recommendation letter">
+        <div class="customer-thumbnail" style="background-image: url('clients/2018 DE anonymized (Handy).jpg')"></div>
+        <div class="customer-name">Client in the energy sector, Berlin/Dortmund, Germany (German)</div>
+      </a>
+
+      <!-- 2016 EN -->
+      <a href="clients/2016 EN anonymized (Groß).jpg" class="customer-card" aria-label="View full recommendation letter">
+        <div class="customer-thumbnail" style="background-image: url('clients/2016 EN anonymized (Handy).jpg')"></div>
+        <div class="customer-name">Music label, Berlin, Germany</div>
+      </a>
+    </div>
   </main>
 
   <footer>
@@ -338,14 +419,8 @@
         siteName: "remoteyon IT consulting",
         navHome: "Home",
         navClients: "Clients",
-        homeTitle: "Welcome to the home page",
-        homeSubtitle: "This is an empty starter layout you can customize.",
-        homeBlock1Title: "Getting started",
-        homeBlock1Body:
-          "Replace these sections with your own content. Use this file as a base for building out your pages.",
-        homeBlock2Title: "Reusable layout",
-        homeBlock2Body:
-          "The header and footer are identical across pages. Update one file, duplicate it, and then adjust only the main content area.",
+        customersTitle: "Client Recommendation Letters",
+        customersSubtitle: "Read what our satisfied clients have said about our IT consulting services.",
         headerLanguageLabel: "Language:",
         footerPrivacy: "Privacy",
         footerTerms: "Imprint"
@@ -354,14 +429,8 @@
         siteName: "ريموتيون للإستشارات التقنية",
         navHome: "الرئيسية",
         navClients: "العملاء",
-        homeTitle: "مرحبًا بك في الصفحة الرئيسية",
-        homeSubtitle: "هذا تصميم مبدئي فارغ يمكنك تخصيصه.",
-        homeBlock1Title: "البدء",
-        homeBlock1Body:
-          "استبدل هذه الأقسام بالمحتوى الخاص بك. استخدم هذا الملف كأساس لبناء صفحاتك.",
-        homeBlock2Title: "تصميم قابل لإعادة الاستخدام",
-        homeBlock2Body:
-          "يبقى الترويسة والتذييل متطابقين في جميع الصفحات. حدّث ملفًا واحدًا وكررّه ثم عدّل منطقة المحتوى فقط.",
+        customersTitle: "رسائل توصية من العملاء",
+        customersSubtitle: "اقرأ ما قاله عملاؤنا المسرورون عن خدماتنا الاستشارية في مجال تكنولوجيا المعلومات.",
         headerLanguageLabel: "اللغة:",
         footerPrivacy: "الخصوصية",
         footerTerms: "بيانات الشركة"
@@ -370,15 +439,8 @@
         siteName: "remoteyon IT-Consulting",
         navHome: "Startseite",
         navClients: "Kunden",
-        homeTitle: "Willkommen auf der Startseite",
-        homeSubtitle:
-          "Dies ist ein leeres Startlayout, das du anpassen kannst.",
-        homeBlock1Title: "Erste Schritte",
-        homeBlock1Body:
-          "Ersetze diese Abschnitte durch eigene Inhalte. Verwende diese Datei als Basis für deine Seiten.",
-        homeBlock2Title: "Wiederverwendbares Layout",
-        homeBlock2Body:
-          "Kopf- und Fußbereich sind auf allen Seiten identisch. Aktualisiere eine Datei, dupliziere sie und passe nur den Hauptinhalt an.",
+        customersTitle: "Kundenempfehlungsschreiben",
+        customersSubtitle: "Lesen Sie, was unsere zufriedenen Kunden über unsere IT-Beratungsdienste sagen.",
         headerLanguageLabel: "Sprache:",
         footerPrivacy: "Datenschutz",
         footerTerms: "Impressum"
