@@ -1,0 +1,26 @@
+Website folder and file structure:
+|   index.html
+|   index_ar.html
+|   index_de.html
+|
++---code
+|       script.js
+|       styles.css
+|
++---legal
+|       datenschutz.html
+|       impressum.html
+|
+\---pics
+        2016_EN_full.jpg
+        2016_EN_thumbnail.jpg
+        2018_DE_full.jpg
+        2018_DE_thumbnail.jpg
+        2019_EN_full.jpg
+        2019_EN_thumbnail.jpg
+        2021_DE_full.png
+        2021_DE_thumbnail.png
+        2022_EN_full.png
+        2022_EN_thumbnail.png
+        logo-dark.png
+        logo-light.png
