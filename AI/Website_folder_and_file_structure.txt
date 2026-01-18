@@ -3,15 +3,15 @@ Website folder and file structure:
 |   index_ar.html
 |   index_de.html
 |
-+---code
++---code/
 |       script.js
 |       styles.css
 |
-+---legal
++---legal/
 |       datenschutz.html
 |       impressum.html
 |
-\---pics
++---pics/
         2016_EN_full.jpg
         2016_EN_thumbnail.jpg
         2018_DE_full.jpg
