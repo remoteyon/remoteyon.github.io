@@ -32,8 +32,10 @@ Feel free to inspect the code in case you need something similar for your projec
 
 ### AI considerations:
 
+* Now using one giant prompt to generate a fresh website everytime, incase the AI starts messing up the code. Considerung moving to modular prompt files that I upload at once.
 * Unlike Gemini, Perplexity behaved badly only after many prompts. Restarting with a fresh prompt and a recent copy of the html file worked much better than in Gemini
 * Using Canvas mode in Gemini allows for versioning, but it's buggy, so always copy and paste the latest working code into an editor
 * Gemini will make unwanted changes to other parts of the site: Check your prompt and preview the entire website to be sure
 * Gemini had a problem with a bigger and more detailes website generator prompt. It also suggested that I generate the files in multiple steps instead of one giant prompt.
-* Deepseek will add chinese comments to the file, although all my instructions were in English! It will also slow down the browser to a halt while it (slowly) generates the code, way slower than other AIs
+* Abandoned Deepseek: Deepseek will add chinese comments to the files, although all my instructions were in English! It will also slow down the browser to a halt while it (slowly) generates the code, way slower than other AIs.
+* Abandoned Replit: Although I specifically wanted a static page, replit went ahead and created a super-complicated one anyway. Not nice!
